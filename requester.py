@@ -1,10 +1,11 @@
 import requests
 from pyquery import PyQuery as pq
 from datetime import date
-
+import random
 class Requester:
     def __init__(self, earnings):
-        self.data = {
+        self.brutto = earnings
+        self.__data = {
             'sedlak_calculator[contractType]': 'work',
             'sedlak_calculator[calculateWay]': 'gross',
             'sedlak_calculator[earnings]': earnings,
@@ -56,15 +57,17 @@ class Requester:
             html = r.text
             d = pq(html)
             token = d('#sedlak_calculator__token').attr('value')
-            self.data['sedlak_calculator[_token]'] = token
-            p = s.post('https://wynagrodzenia.pl/kalkulator-wynagrodzen/wyniki', headers= headers, data = self.data)
+            self.__data['sedlak_calculator[_token]'] = token
+            p = s.post('https://wynagrodzenia.pl/kalkulator-wynagrodzen/wyniki', headers= headers, data = self.__data)
             html = p.text
             d = pq(html)
             self.net_income = d('#main-container div.fullbox div.col-md-3:first span')[0].text
         else:
             print(f"Can't reach destamatopn, http error code: {r.status_code}")
 
-
+temp = [Requester(random.randint(5000,10000))for i in range(6)]
+for i in temp:
+    print(i.brutto,i.net_income)
 
 # r1 = Requester(7000)
 # r2 = Requester(5400)
