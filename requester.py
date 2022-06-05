@@ -1,7 +1,7 @@
 import requests
 from pyquery import PyQuery as pq
 from datetime import date
-import random
+
 class Requester:
     def __init__(self, earnings):
         self.brutto = earnings
@@ -65,9 +65,9 @@ class Requester:
         else:
             print(f"Can't reach destamatopn, http error code: {r.status_code}")
 
-temp = [Requester(random.randint(5000,10000))for i in range(6)]
-for i in temp:
-    print(i.brutto,i.net_income)
+# temp = [Requester(random.randint(5000,10000))for i in range(6)]
+# for i in temp:
+#     print(i.brutto,i.net_income)
 
 # r1 = Requester(7000)
 # r2 = Requester(5400)
