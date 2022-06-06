@@ -30,4 +30,5 @@ if args.plot:
     plt.title('Gross over Net')
     plt.xlabel('Gross')
     plt.ylabel('Net')
+    plt.ylim(0,max(args.values))
     plt.show()
