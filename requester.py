@@ -2,7 +2,7 @@ import requests
 from pyquery import PyQuery as pq
 from datetime import date
 
-class Requester:
+class GrossToNet:
     def __init__(self, earnings):
         self.gross = earnings
         self.__data = {
