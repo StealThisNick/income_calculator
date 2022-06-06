@@ -10,7 +10,7 @@ expected outcome for: main.py 5000.00 6000.00 7000.00 8000.00 9000.00 10000.00 4
 \
 ![IMG](img/outcome.png)
 \
-expected outcome for: main.py -p 5000.00 6000.00 7000.00 8000.00 9000.00 10000.00 4000.00:
+expected outcome for: main.py -p 5000.00 6000.00 7000.00 8000.00 9000.00 10000.00:
 \
 ![IMG](img/Figure_1.png)
 
