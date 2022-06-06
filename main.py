@@ -24,6 +24,7 @@ if args.plot:
     gross=np.sort(gross)
     net=np.sort(net)
     # points = np.linspace(0,max(args.values),len(args.values))
+    plt.plot(gross,net,'rx')
     plt.plot(gross,net)
     # plt.plot(points,gross,label='Gross')
     # plt.plot(points,net,label='Net')
