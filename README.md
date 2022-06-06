@@ -17,7 +17,7 @@ expected outcome for: main.py -p 5000.00 6000.00 7000.00 8000.00 9000.00 10000.0
 ### USAGE EXAMPLE
 ![GIF](img/usage_animation.gif)
 
-## HELP:
+## COMANDS:
 -h or --help: shows help message\
 values: positional arrgument, can be any number of float values, and application will calcualte net income using these values, values must be separated by space for example: 5000.00 6000.00 7000.00 8000.00 9000.00 10000.00 4000.00\
 -p or --plot: plot entered gross values over calcualted net income
