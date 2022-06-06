@@ -11,8 +11,9 @@ args = parser.parse_args()
 n = len(args.values)
 for i in range(n):
     incomes.append(requester.GrossToNet(args.values[i]))
-    # currency = "{: ,2f} PLN".format(float(incomes[i].gross))
-    print(f"Gross: {float(incomes[i].gross):,}".replace(',',' ').replace('.',',') + f" PLN, Net: {incomes[i].net_income}")
+    currency = "{:,.2f}".format(float(incomes[i].gross)).replace(',',' ').replace('.',',')
+    print(f"Gross: {currency} PLN, Net: {incomes[i].net_income}")
+    # print(f"Gross: {float(incomes[i].gross):,}".replace(',',' ').replace('.',',') + f" PLN, Net: {incomes[i].net_income}")
 
 if args.plot:
     net = []
