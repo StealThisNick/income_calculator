@@ -1,14 +1,7 @@
 import requester
-import random
 import argparse
 import matplotlib.pyplot as plt
 import numpy as np
-debug = False
-
-if debug:
-    temp = [requester.Requester(random.randint(5000,10000))for i in range(6)]
-    for i in temp:
-        print(i.brutto,i.net_income)
 
 incomes = []
 parser = argparse.ArgumentParser(description='Calculate net income from gross values')
@@ -25,14 +18,16 @@ if args.plot:
     net = []
     gross = []
     for i in incomes:
-        # print(float(i.net_income.replace(' ','').replace('PLN','').replace(',','.')))
         net.append(float(i.net_income.replace(' ','').replace('PLN','').replace(',','.')))
         gross.append(i.gross)
     gross=np.sort(gross)
     net=np.sort(net)
-    # points = np.arange(0,max(args.values))
-    points = np.linspace(0,max(args.values),len(args.values))
-    plt.plot(points,gross,label='Gross')
-    plt.plot(points,net,label='Net')
-    plt.legend(loc="upper left")
+    # points = np.linspace(0,max(args.values),len(args.values))
+    plt.plot(gross,net)
+    # plt.plot(points,gross,label='Gross')
+    # plt.plot(points,net,label='Net')
+    # plt.legend(loc="upper left")
+    plt.title('Gross over Net')
+    plt.xlabel('Gross')
+    plt.ylabel('Net')
     plt.show()
