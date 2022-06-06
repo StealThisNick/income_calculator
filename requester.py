@@ -61,6 +61,11 @@ class GrossToNet:
             p = s.post('https://wynagrodzenia.pl/kalkulator-wynagrodzen/wyniki', headers= headers, data = self.__data)
             html = p.text
             d = pq(html)
-            self.net_income = d('#main-container div.fullbox div.col-md-3:first span')[0].text
+            try:
+                self.net_income = d('#main-container div.fullbox div.col-md-3:first span')[0].text
+            except Exception as e:
+                self.net_income = ""
+                print(f"{25*'='}ERROR: {e}{25*'='}")
+                print(html)
         else:
             print(f"Can't reach destamatopn, http error code: {r.status_code}")
