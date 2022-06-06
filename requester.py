@@ -68,4 +68,6 @@ class GrossToNet:
                 print(f"{25*'='}ERROR: {e}{25*'='}")
                 print(html)
         else:
-            print(f"Can't reach destamatopn, http error code: {r.status_code}")
+            print(f"{25*'='}ERROR: {e}{25*'='}")
+            print(f"Can't reach desired destination, http error code: {r.status_code}")
+            self.net_income = ""
